@@ -1,0 +1,21 @@
+{
+  "name": "movie-finder-vue",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "axios": "^1.4.0",
+    "tailwindcss": "^3.3.2",
+    "vue": "^3.3.4",
+    "vue3-carousel": "^0.3.1",
+    "vuex": "^4.1.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.2.3",
+    "vite": "^4.3.9"
+  }
+}
