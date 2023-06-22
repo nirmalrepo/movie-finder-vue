@@ -1,17 +1,9 @@
-import axios from 'axios';
 
-const API_KEY = '136d55d9c6878da748d19b6aa4870c86'; // Replace with your API key
-
-const axiosInstance = axios.create({
-  baseURL: 'https://api.themoviedb.org/3',
-  params: {
-    api_key: API_KEY,
-  },
-});
+import instance from './api-axios';
 
 async function apiRequest(endpoint, params) {
   try {
-    const response = await axiosInstance.get(endpoint, { params });
+    const response = await instance.get(endpoint, { params });
     return response.data;
   } catch (error) {
     console.error(error);
@@ -31,5 +23,6 @@ export async function searchMovies(searchTerm, page = 1) {
     query: searchTerm,
     page,
   };
-  return apiRequest('/search/movie', params);
+  const response = apiRequest('/search/movie', params);
+  return response
 }
