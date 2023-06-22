@@ -1,26 +1,29 @@
 <template>
-  <div class="relative">
+  <div class="flex flex-row">
     <input
       v-model="searchTerm"
       type="text"
       placeholder="Search movies..."
-      class="w-full p-2 rounded-l-lg"
+      class="p-2 w-2/3 rounded-3xl mr-2 bg-transparent border-2 border-gold"
     />
-    <button
+    <Button
       @click="searchMovies"
-      class="absolute top-0 right-0 h-full px-4 rounded-r-lg bg-blue-500 hover:bg-blue-600"
     >
       Search
-    </button>
+  </Button>
   </div>
 </template>
   
   <script>
 import { ref, watch } from "vue";
+import Button from "../atoms/Button.vue";
 
 export default {
   props: ["searchTerm"],
   emits: ["search", "update:searchTerm"],
+  components: {
+    Button,
+  },
   setup(props, { emit }) {
     const searchTerm = ref(props.searchTerm);
 
@@ -35,6 +38,7 @@ export default {
     return {
       searchTerm,
       searchMovies,
+
     };
   },
 };

@@ -1,6 +1,7 @@
 <template>
   <div class="text-white max-w-screen-xl mx-auto">
-    <div class="p-4 max-w-screen-sm mx-auto">
+    <div class="p-4 max-w-xl mx-auto">
+      <img src="@/assets/logo.jpg" alt="Logo" class="max-w-xs mx-auto" />
       <search-input
         :search-term="searchTerm"
         @search="searchMovies"
@@ -9,22 +10,17 @@
     </div>
     <div class="p-4">
       <search-results :movies="movies" v-if="movies.length > 0" />
-      <div class="flex justify-center mt-4">
-        <button
-          :disabled="currentPage === 1"
-          @click="previousPage"
-          class="px-4 py-2 rounded-lg bg-blue-500 hover:bg-blue-600"
-        >
+      <div v-if="movies.length > 0" class="flex justify-center mx-auto max-w-md">
+        <Button :disabled="currentPage === 1" @click="previousPage">
           Previous
-        </button>
+        </Button>
         <span class="px-4">{{ currentPage }}</span>
-        <button
-          :disabled="currentPage === totalPages"
-          @click="nextPage"
-          class="px-4 py-2 rounded-lg bg-blue-500 hover:bg-blue-600"
-        >
+        <Button :disabled="currentPage === totalPages" @click="nextPage">
           Next
-        </button>
+        </Button>
+      </div>
+      <div v-else class="flex justify-center mx-auto max-w-md">
+        <p class="text-center text-gray-400" v-if="!hasResults">No results found.</p>
       </div>
     </div>
     <div class="p-4">
@@ -32,19 +28,21 @@
     </div>
   </div>
 </template>
-  
-  <script>
-import { ref, computed, watch, onMounted } from "vue";
+
+<script>
+import { ref, computed, onMounted, watch } from "vue";
 import { useStore } from "vuex";
 import SearchInput from "../molecules/SearchInput.vue";
 import SearchResults from "../organisms/SearchResults.vue";
 import PopularMovies from "../organisms/PopularMovies.vue";
+import Button from "../atoms/Button.vue";
 
 export default {
   components: {
     SearchInput,
     SearchResults,
     PopularMovies,
+    Button,
   },
   setup() {
     const searchTerm = ref("");
@@ -54,6 +52,7 @@ export default {
     const popularMovies = computed(() => store.getters.getPopularMovies);
     const currentPage = computed(() => store.getters.getCurrentPage);
     const totalPages = computed(() => store.getters.getTotalPages);
+    const hasResults = computed(() => store.state.hasResults);
 
     const fetchMovies = ({ searchTerm, page }) => {
       store.dispatch("fetchMovies", { searchTerm, page });
@@ -81,20 +80,12 @@ export default {
         page: currentPage.value + 1,
       });
     };
-
-    const getImageUrl = (posterPath) => {
-      if (!posterPath) {
-        return "";
-      }
-      return `https://image.tmdb.org/t/p/w200/${posterPath}`;
-    };
-
-    // watch(searchTerm, () => {
-    //   fetchMovies({ searchTerm: searchTerm.value, page: 1 });
-    // });
-
     onMounted(() => {
       fetchPopularMovies();
+    });
+    
+    watch(searchTerm, () => {
+        fetchMovies({ searchTerm: searchTerm.value, page: 1 });
     });
 
     return {
@@ -106,9 +97,8 @@ export default {
       searchMovies,
       previousPage,
       nextPage,
-      getImageUrl,
+      hasResults,
     };
   },
 };
 </script>
-  

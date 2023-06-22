@@ -1,8 +1,7 @@
 <!-- src/App.vue -->
 <template>
-  <div id="app" class="bg-black">
+  <div id="app">
     <vue-progress-bar></vue-progress-bar>
-    <h1>Movie App</h1>
     <MoviePage />
   </div>
 </template>

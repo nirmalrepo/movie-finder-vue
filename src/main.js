@@ -6,9 +6,9 @@ import './assets/main.css';
 import VueLazyLoad from 'vue3-lazyload'
 import VueProgressBar from "@aacassandra/vue3-progressbar";
 const options = {
-    color: 'rgb(143, 255, 199)',
+    color: '#C29440',
     failedColor: 'red',
-    height: '2px'
+    
 };
 
 

@@ -7,6 +7,7 @@ export default createStore({
     popularMovies: [],
     currentPage: 1,
     totalPages: 0,
+    hasResults: true, // New property to track if there are results
   },
   mutations: {
     SET_MOVIES(state, movies) {
@@ -21,11 +22,14 @@ export default createStore({
     SET_CURRENT_PAGE(state, currentPage) {
       state.currentPage = currentPage;
     },
+    SET_HAS_RESULTS(state, hasResults) {
+      state.hasResults = hasResults;
+    },
   },
   actions: {
-    async fetchPopularMovies({ commit, state }) {
+    async fetchPopularMovies({ commit }) {
       try {
-        const { results, total_pages } = await fetchPopularMovies();
+        const { results } = await fetchPopularMovies();
         commit('SET_POPULAR_MOVIES', results);
       } catch (error) {
         console.error(error);
@@ -37,6 +41,12 @@ export default createStore({
         commit('SET_MOVIES', results);
         commit('SET_TOTAL_PAGES', total_pages);
         commit('SET_CURRENT_PAGE', page);
+
+        if (results.length === 0 && page === 1) {
+          commit('SET_HAS_RESULTS', false);
+        } else {
+          commit('SET_HAS_RESULTS', true);
+        }
       } catch (error) {
         console.error(error);
       }
@@ -47,5 +57,6 @@ export default createStore({
     getPopularMovies: (state) => state.popularMovies,
     getTotalPages: (state) => state.totalPages,
     getCurrentPage: (state) => state.currentPage,
+    getHasResults: (state) => state.hasResults, // Getter for hasResults
   },
 });

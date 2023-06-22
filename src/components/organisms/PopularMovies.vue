@@ -4,11 +4,7 @@
     <div class="slider">
       <Carousel :items-to-show="6" :autoplay="2000">
         <Slide v-for="movie in popularMovies" :key="movie.id">
-          <img
-            :src="getImageUrl(movie.poster_path)"
-            alt="Movie Poster"
-            class="rounded-lg w-full"
-          />
+          <poster-thumbnail :posterPath="movie.poster_path" />
         </Slide>
         <template #addons>
           <Navigation />
@@ -17,9 +13,9 @@
     </div>
   </div>
 </template>
-  
-  <script>
-import { ref, computed } from "vue";
+
+<script>
+import PosterThumbnail from "../atoms/PosterThumbnail.vue";
 import { Carousel, Slide, Navigation } from "vue3-carousel";
 
 export default {
@@ -28,19 +24,7 @@ export default {
     Carousel,
     Slide,
     Navigation,
-  },
-  setup(props) {
-    const getImageUrl = (posterPath) => {
-      if (!posterPath) {
-        return "";
-      }
-      return `https://image.tmdb.org/t/p/w200/${posterPath}`;
-    };
-
-    return {
-      getImageUrl,
-    };
-  },
+    PosterThumbnail
+  }
 };
 </script>
-  
