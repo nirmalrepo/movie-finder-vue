@@ -7,7 +7,6 @@ export default createStore({
     popularMovies: [],
     currentPage: 1,
     totalPages: 0,
-    isLoading: false, // Add the isLoading state
   },
   mutations: {
     SET_MOVIES(state, movies) {
@@ -26,27 +25,20 @@ export default createStore({
   actions: {
     async fetchPopularMovies({ commit, state }) {
       try {
-        state.isLoading = true; // Set isLoading to true before fetching popular movies
         const { results, total_pages } = await fetchPopularMovies();
         commit('SET_POPULAR_MOVIES', results);
       } catch (error) {
         console.error(error);
-      } finally {
-        state.isLoading = false; // Set isLoading to false after fetching popular movies
       }
     },
     async fetchMovies({ commit, state }, { searchTerm, page }) {
       try {
-        state.isLoading = true; // Set isLoading to true before fetching movies
-
         const { results, total_pages } = await searchMovies(searchTerm, page);
         commit('SET_MOVIES', results);
         commit('SET_TOTAL_PAGES', total_pages);
         commit('SET_CURRENT_PAGE', page);
       } catch (error) {
         console.error(error);
-      } finally {
-        // state.isLoading = false; // Set isLoading to false after fetching movies
       }
     },
   },
