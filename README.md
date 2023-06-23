@@ -1,17 +1,17 @@
 # Movie Finder Vue
 
-Movie Finder Vue is a web application built with Vue.js, Vuex, and TailwindCSS that allows users to search for movies and view details such as the title, release date, and poster image. It integrates with the [TMDB API](https://developer.themoviedb.org/reference/intro/getting-started) to fetch movie data. The application follows the principles of Atomic Design for its component structure and design system.
+Movie Finder Vue is a web application built with Vue.js, Vuex, and TailwindCSS that allows users to search for movies and view details such as the title, release date, and poster image. It integrates with the [TMDB API](https://developer.themoviedb.org/reference/intro/getting-started){:target="_blank"} to fetch movie data. The application follows the principles of Atomic Design for its component structure and design system.
 
 ## Features
 
-- Search for movies by title
-- View movie details including title, release date, and the poster
-- Responsive design for optimal viewing on different devices
-- Popular Movies Slider
+- Search for movies by title.
+- View movie details including title, release date, and the poster.
+- Responsive design for optimal viewing on different devices.
+- Popular Movies Slider.
 
 ## Demo
 
-A live demo of the Movie Finder Vue application is available [here](https://movie-finder-vue.vercel.app/).
+A live demo of the Movie Finder Vue application is available [here](https://movie-finder-vue.vercel.app/){:target="_blank"}.
 
 ## Installation
 
@@ -53,7 +53,7 @@ To run the application locally, follow these steps:
 
 ## Vue Libraries Used
 
-- [The Awesome Vue.js 3 Pagination Library](https://github.com/peshanghiwa/vue-awesome-paginate) - Pagination component for Vue.js applications 
-- [Vue 3 Carousel](https://www.npmjs.com/package/vue3-carousel) - Carousel component for Vue.js applications
-- [vue3-lazyload](https://github.com/murongg/vue3-lazyload) - Lazy loading image component for Vue.js applications
-- [vue3-progressbar](https://github.com/aacassandra/vue3-progressbar)- Progress bar component for Vue.js applications
+- [The Awesome Vue.js 3 Pagination Library](https://github.com/peshanghiwa/vue-awesome-paginate){:target="_blank"} - Pagination component for Vue.js applications 
+- [Vue 3 Carousel](https://www.npmjs.com/package/vue3-carousel){:target="_blank"} - Carousel component for Vue.js applications
+- [vue3-lazyload](https://github.com/murongg/vue3-lazyload){:target="_blank"} - Lazy loading image component for Vue.js applications
+- [vue3-progressbar](https://github.com/aacassandra/vue3-progressbar){:target="_blank"} - Progress bar component for Vue.js applications
