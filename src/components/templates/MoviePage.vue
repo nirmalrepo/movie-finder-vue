@@ -4,7 +4,7 @@
       <div class="flex flex-col items-center justify-center mb-14">
         <img src="@/assets/logo.jpg" alt="Logo" />
         <p class="max-w-md text-l md:text-xl text-center text-gray-300">
-          Your Online Movie Database, Powered by TMDB
+          Discover, Explore, and Seamlessly Search Movies
         </p>
       </div>
 

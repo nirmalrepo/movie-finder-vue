@@ -2,7 +2,7 @@
   <li>
     <div class="rounded-lg">
       <poster-thumbnail :posterPath="movie.poster_path" />
-      <h4 class="text-md mt-2">{{ movie.title }}</h4>
+      <h4 class="text-md font-medium mt-2">{{ movie.title }}</h4>
       <p class="text-xs">{{ formattedDate }}</p>
     </div>
   </li>

@@ -26,3 +26,6 @@ body {
 .fade-in-leave-to {
     opacity: 0;
 }
+footer{
+    @apply text-gray-400 mx-auto w-full text-xs text-center py-10;
+}

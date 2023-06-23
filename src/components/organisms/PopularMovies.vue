@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2 class="text-3xl text-gold font-bold mb-4">Popular Movies</h2>
+    <h2 class="text-2xl font-medium text-gold mb-4">Popular Movies</h2>
     <div class="slider">
       <Carousel
         :items-to-show="6"

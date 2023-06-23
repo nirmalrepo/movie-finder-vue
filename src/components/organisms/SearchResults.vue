@@ -1,7 +1,7 @@
 <template>
   <div v-if="movies.length > 0">
     <div>
-      <h2 class="text-3xl text-gold font-bold mb-4">Search Results</h2>
+      <h2 class="text-2xl text-gold font-medium mb-4">Search Results</h2>
       <transition-group
         name="fade-in"
         tag="ul"
