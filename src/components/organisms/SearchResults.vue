@@ -10,7 +10,7 @@
         <MovieCard v-for="movie in movies" :key="movie.id" :movie="movie" />
       </transition-group>
     </div>
-    <div class="flex justify-center mx-auto max-w-md pt-4">
+    <div class="flex justify-center mx-auto max-w-md sm:max-w-sm pt-4">
       <vue-awesome-paginate
         :total-items="totalPages"
         :items-per-page="20"
