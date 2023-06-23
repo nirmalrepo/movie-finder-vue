@@ -23,14 +23,14 @@ To run the application locally, follow these steps:
    git clone https://github.com/nirmalrepo/movie-finder-vue.git
 2. Navigate to the project directory:
 
-  ```shell
-  cd movie-finder-vue
-  
+   ```shell
+   cd movie-finder-vue
+   
 3. Install the dependencies:
 
    ```shell
    npm install
-4. Obtain an API key from the OMDb API by registering for a free account.
+4. Obtain an API key from the TMDB  API by registering for a free account.
 5. Create a `.env` file in the root directory of the project and add your API key:
 
    ```plaintext
@@ -57,7 +57,3 @@ To run the application locally, follow these steps:
 - [Vue 3 Carousel](https://www.npmjs.com/package/vue3-carousel) - Carousel component for Vue.js applications
 - [vue3-lazyload](https://github.com/murongg/vue3-lazyload) - Lazy loading image component for Vue.js applications
 - [vue3-progressbar](https://github.com/aacassandra/vue3-progressbar)- Progress bar component for Vue.js applications
-
-
-
-
