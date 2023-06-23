@@ -15,6 +15,7 @@ yarn-error.log*
 
 # Environment file
 .env.local
+.env
 
 # Output of the vue-cli-service
 /.sass-cache/
