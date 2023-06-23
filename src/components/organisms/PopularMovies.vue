@@ -1,11 +1,11 @@
 <template>
   <div>
     <h2 class="text-3xl text-gold font-bold mb-4">Popular Movies</h2>
-    <transition-group name="fade-in" tag="div" class="slider">
+    <div class="slider">
       <Carousel
         :items-to-show="6"
         :autoplay="2000"
-        wrapAround="true"
+        wrapAround
         v-bind="settings"
         :breakpoints="breakpoints"
       >
@@ -16,7 +16,7 @@
           <Navigation />
         </template>
       </Carousel>
-    </transition-group>
+    </div>
   </div>
 </template>
 

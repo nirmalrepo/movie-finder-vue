@@ -14,8 +14,7 @@
         :currentPage="currentPage"
         :totalPages="totalPages"
         :hasResults="hasResults"
-        @previousPage="previousPage"
-        @nextPage="nextPage"
+        @gotoPage="gotoPage"
       />
     </div>
     <div class="p-4">
@@ -60,17 +59,10 @@ export default {
       fetchMovies({ searchTerm: searchTerm.value, page: 1 });
     };
 
-    const previousPage = () => {
+    const gotoPage = (page) => {
       fetchMovies({
         searchTerm: searchTerm.value,
-        page: currentPage.value - 1,
-      });
-    };
-
-    const nextPage = () => {
-      fetchMovies({
-        searchTerm: searchTerm.value,
-        page: currentPage.value + 1,
+        page,
       });
     };
     onMounted(() => {
@@ -88,9 +80,8 @@ export default {
       currentPage,
       totalPages,
       searchMovies,
-      previousPage,
-      nextPage,
       hasResults,
+      gotoPage,
     };
   },
 };

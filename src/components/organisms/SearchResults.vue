@@ -10,14 +10,15 @@
         <MovieCard v-for="movie in movies" :key="movie.id" :movie="movie" />
       </transition-group>
     </div>
-    <div class="flex justify-center mx-auto max-w-md pt-8">
-      <Button :disabled="currentPage === 1" @click="gotoPrevPage">
-        Previous
-      </Button>
-      <span class="px-4">{{ currentPage }}</span>
-      <Button :disabled="currentPage === totalPages" @click="gotoNextPage">
-        Next
-      </Button>
+    <div class="flex justify-center mx-auto max-w-md pt-4">
+      <vue-awesome-paginate
+        :total-items="totalPages"
+        :items-per-page="20"
+        :max-pages-shown="5"
+        v-model="page"
+        :on-click="gotoPage"
+        :hide-prev-next-when-ends="true"
+      />
     </div>
   </div>
 
@@ -29,26 +30,43 @@
 </template>
   
   <script>
+import { computed } from "vue";
 import MovieCard from "../molecules/MovieCard.vue";
-import Button from "../atoms/Button.vue";
+
 export default {
   props: ["movies", "currentPage", "totalPages", "hasResults"],
-  emits: ["previousPage", "nextPage"],
+  emits: ["gotoPage"],
   components: {
     MovieCard,
-    Button,
   },
   setup(props, { emit }) {
-    const gotoNextPage = () => {
-      emit("nextPage");
-    };
-    const gotoPrevPage = () => {
-      emit("previousPage");
+    const page = computed(() => props.currentPage);
+    console.log(page);
+    const gotoPage = (page) => {
+      emit("gotoPage", page);
     };
     return {
-      gotoNextPage,
-      gotoPrevPage,
+      gotoPage,
+      page,
     };
   },
 };
 </script>
+
+<style>
+.pagination-container {
+  @apply flex gap-4;
+}
+
+.paginate-buttons {
+  @apply h-10 w-10 rounded-full cursor-pointer border-2 border-gold text-gold;
+}
+
+.paginate-buttons:hover {
+  @apply bg-gold-hover text-white;
+}
+
+.active-page {
+  @apply bg-gold border-gold text-white;
+}
+</style>
