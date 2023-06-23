@@ -25,6 +25,7 @@ To run the application locally, follow these steps:
 
   ```shell
   cd movie-finder-vue
+  
 3. Install the dependencies:
 
    ```shell
