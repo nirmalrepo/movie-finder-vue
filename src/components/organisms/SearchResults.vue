@@ -10,11 +10,11 @@
         <MovieCard v-for="movie in movies" :key="movie.id" :movie="movie" />
       </transition-group>
     </div>
-    <div class="flex justify-center mx-auto max-w-md sm:max-w-sm pt-4">
+    <div class="flex justify-center mx-auto max-w-sm pt-4">
       <vue-awesome-paginate
         :total-items="totalPages"
         :items-per-page="20"
-        :max-pages-shown="5"
+        :max-pages-shown="4"
         v-model="page"
         :on-click="gotoPage"
         :hide-prev-next-when-ends="true"
@@ -41,7 +41,6 @@ export default {
   },
   setup(props, { emit }) {
     const page = computed(() => props.currentPage);
-    console.log(page);
     const gotoPage = (page) => {
       emit("gotoPage", page);
     };
@@ -55,7 +54,7 @@ export default {
 
 <style>
 .pagination-container {
-  @apply flex gap-4;
+  @apply w-full flex justify-center mx-auto gap-1 md:gap-2;
 }
 
 .paginate-buttons {

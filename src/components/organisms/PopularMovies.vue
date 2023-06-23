@@ -23,7 +23,7 @@
 <script>
 import PosterThumbnail from "../atoms/PosterThumbnail.vue";
 import { Carousel, Slide, Navigation } from "vue3-carousel";
-
+import "vue3-carousel/dist/carousel.css";
 export default {
   props: ["popularMovies"],
   components: {
@@ -55,8 +55,3 @@ export default {
   }),
 };
 </script>
-<style scoped>
-.carousel__slide {
-  @apply p-2;
-}
-</style>

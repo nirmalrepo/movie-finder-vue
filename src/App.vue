@@ -8,12 +8,10 @@
 
 <script>
 import { getCurrentInstance } from "vue";
-import MovieList from "./components/MovieList.vue";
 import MoviePage from "./components/templates/MoviePage.vue";
 
 export default {
   components: {
-    MovieList,
     MoviePage,
   },
   setup() {
@@ -26,6 +24,3 @@ export default {
 };
 </script>
 
-<style>
-/* Add your custom styles here if needed */
-</style>

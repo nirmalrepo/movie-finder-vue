@@ -6,8 +6,12 @@ body {
     @apply bg-dark-gray;
 }
 
+.carousel__slide {
+    @apply p-2;
+}
+
 .carousel__icon {
-    @apply fill-white;
+    @apply fill-white !important;
 }
 
 .fade-in-enter-active {
