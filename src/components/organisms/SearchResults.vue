@@ -10,7 +10,7 @@
         <MovieCard v-for="movie in movies" :key="movie.id" :movie="movie" />
       </transition-group>
     </div>
-    <div class="flex justify-center mx-auto max-w-md">
+    <div class="flex justify-center mx-auto max-w-md pt-2">
       <Button :disabled="currentPage === 1" @click="gotoPrevPage">
         Previous
       </Button>
