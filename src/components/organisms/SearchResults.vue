@@ -1,16 +1,16 @@
 <template>
-  <div v-if="movies.length > 0">
-    <div>
-      <h2 class="text-2xl text-gold font-medium mb-4">Search Results</h2>
+  <div class="section-search-reults" v-if="movies.length > 0">
+    <div class="row-search-results">
+      <h2 class="mb-4 text-2xl font-medium text-gold">Search Results</h2>
       <transition-group
         name="fade-in"
         tag="ul"
-        class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4"
+        class="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6"
       >
         <MovieCard v-for="movie in movies" :key="movie.id" :movie="movie" />
       </transition-group>
     </div>
-    <div class="flex justify-center mx-auto max-w-sm pt-4">
+    <div class="row-pagination mx-auto max-w-sm pt-4">
       <vue-awesome-paginate
         :total-items="totalPages"
         :items-per-page="20"
@@ -21,15 +21,12 @@
       />
     </div>
   </div>
-
-  <div v-else class="flex justify-center mx-auto max-w-md">
-    <p class="text-center text-gray-400" v-if="!hasResults">
-      No results found.
-    </p>
+  <div v-else class="row-no-results mx-auto max-w-md">
+    <p class="text-center" v-if="!hasResults">No results found.</p>
   </div>
 </template>
-  
-  <script>
+
+<script>
 import { computed } from "vue";
 import MovieCard from "../molecules/MovieCard.vue";
 
@@ -54,11 +51,11 @@ export default {
 
 <style>
 .pagination-container {
-  @apply w-full flex justify-center mx-auto gap-1 md:gap-2;
+  @apply mx-auto flex w-full justify-center gap-1 md:gap-2;
 }
 
 .paginate-buttons {
-  @apply h-10 w-10 rounded-full cursor-pointer border-2 border-gold text-gold;
+  @apply h-10 w-10 cursor-pointer rounded-full border-2 border-gold text-gold;
 }
 
 .paginate-buttons:hover {
@@ -66,6 +63,6 @@ export default {
 }
 
 .active-page {
-  @apply bg-gold border-gold text-white;
+  @apply border-gold bg-gold text-white;
 }
 </style>

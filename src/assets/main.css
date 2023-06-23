@@ -3,29 +3,29 @@
 @tailwind utilities;
 
 body {
-    @apply bg-dark-gray;
+  @apply bg-dark-gray text-gray-200;
 }
 
 .carousel__slide {
-    @apply p-2;
+  @apply p-2;
 }
 
 .carousel__icon {
-    @apply fill-white !important;
+  @apply fill-white !important;
 }
 
 .fade-in-enter-active {
-    @apply transition-opacity duration-500 ease-out;
+  @apply transition-opacity duration-500 ease-out;
 }
 
 .fade-in-leave-active {
-    @apply transition-opacity duration-300 ease-in;
+  @apply transition-opacity duration-300 ease-in;
 }
 
 .fade-in-enter,
 .fade-in-leave-to {
-    opacity: 0;
+  opacity: 0;
 }
-footer{
-    @apply text-gray-400 mx-auto w-full text-xs text-center py-10;
+footer {
+  @apply mx-auto w-full py-10 text-center text-xs text-gray-400;
 }

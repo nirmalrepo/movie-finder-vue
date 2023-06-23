@@ -1,8 +1,8 @@
 <template>
   <vue-progress-bar :value="value"></vue-progress-bar>
 </template>
-  
-  <script>
+
+<script>
 import VueProgressBar from "vue-progressbar";
 
 export default {
@@ -12,4 +12,3 @@ export default {
   },
 };
 </script>
-  

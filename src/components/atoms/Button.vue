@@ -1,7 +1,7 @@
 <template>
   <button
     :class="[
-      'px-4 w-1/3 py-2 rounded-3xl cursor-pointer',
+      'w-1/3 cursor-pointer rounded-3xl px-4 py-2',
       backgroundColor,
       hoverBackgroundColor,
       textColor,
@@ -13,7 +13,7 @@
     <slot></slot>
   </button>
 </template>
-  
+
 <script>
 export default {
   props: {
@@ -49,4 +49,3 @@ export default {
   },
 };
 </script>
-  

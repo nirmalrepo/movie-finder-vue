@@ -1,16 +1,16 @@
 <template>
-  <div class="flex flex-row">
+  <div class="row-movie-search flex flex-row">
     <input
       v-model="searchTerm"
       type="text"
       placeholder="Search movies..."
-      class="px-4 py-2 w-2/3 rounded-3xl mr-2 bg-transparent border-2 border-gold"
+      class="mr-2 w-2/3 rounded-3xl border-2 border-gold bg-transparent px-4 py-2"
     />
     <Button @click="searchMovies"> Search </Button>
   </div>
 </template>
-  
-  <script>
+
+<script>
 import { ref, watch } from "vue";
 import Button from "../atoms/Button.vue";
 
@@ -38,4 +38,3 @@ export default {
   },
 };
 </script>
-  

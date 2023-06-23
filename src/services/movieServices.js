@@ -1,5 +1,4 @@
-
-import instance from './api-axios';
+import instance from "./apiAxios";
 
 async function apiRequest(endpoint, params) {
   try {
@@ -7,15 +6,15 @@ async function apiRequest(endpoint, params) {
     return response.data;
   } catch (error) {
     console.error(error);
-    throw new Error('API request failed');
+    throw new Error("API request failed");
   }
 }
 export async function fetchPopularMovies(page = 1) {
   const params = {
     page,
-    sort_by: 'popularity.desc',
+    sort_by: "popularity.desc",
   };
-  return apiRequest('/movie/popular', params);
+  return apiRequest("/movie/popular", params);
 }
 
 export async function searchMovies(searchTerm, page = 1) {
@@ -23,6 +22,6 @@ export async function searchMovies(searchTerm, page = 1) {
     query: searchTerm,
     page,
   };
-  const response = apiRequest('/search/movie', params);
-  return response
+  const response = apiRequest("/search/movie", params);
+  return response;
 }

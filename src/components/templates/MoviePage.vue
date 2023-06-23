@@ -1,20 +1,19 @@
 <template>
-  <div class="text-white max-w-screen-xl mx-auto">
-    <div class="p-4 max-w-xl mx-auto">
-      <div class="flex flex-col items-center justify-center mb-14">
+  <div class="container mx-auto">
+    <div class="intro-wrapper mx-auto max-w-xl p-4">
+      <div class="mb-14 flex flex-col items-center justify-center">
         <img src="@/assets/logo.jpg" alt="Logo" />
-        <p class="max-w-md text-l md:text-xl text-center text-gray-300">
+        <p class="text-l text-center text-gray-300 md:text-xl">
           Discover, Explore, and Seamlessly Search Movies
         </p>
       </div>
-
       <search-input
         :search-term="searchTerm"
         @search="searchMovies"
         @update:searchTerm="searchTerm = $event"
       ></search-input>
     </div>
-    <div class="p-4">
+    <div class="search-results-wrapper p-4">
       <search-results
         :movies="movies"
         :currentPage="currentPage"
@@ -23,7 +22,7 @@
         @gotoPage="gotoPage"
       />
     </div>
-    <div class="p-4">
+    <div class="popular-movies-wrapper p-4">
       <popular-movies :popular-movies="popularMovies" />
     </div>
   </div>

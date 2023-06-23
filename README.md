@@ -21,26 +21,36 @@ To run the application locally, follow these steps:
 
    ```shell
    git clone https://github.com/nirmalrepo/movie-finder-vue.git
+   ```
+
 2. Navigate to the project directory:
 
    ```shell
    cd movie-finder-vue
-   
+
+   ```
+
 3. Install the dependencies:
 
    ```shell
    npm install
-4. Obtain an API key from the TMDB  API by registering for a free account.
+   ```
+
+4. Obtain an API key from the TMDB API by registering for a free account.
 5. Create a `.env` file in the root directory of the project and add your API key:
 
    ```plaintext
    VITE_APP_API_BASE_URL=https://api.themoviedb.org/3
    VITE_APP_API_KEY=YOUR_API_KEY_HERE
    VITE_APP_IMAGE_BASE_URL=https://image.tmdb.org/t/p/
+   ```
+
 6. Start the development server:
 
    ```shell
    npm run dev
+   ```
+
 7. Open your browser and visit `http://localhost:{port}` to view the application.
 
 ## Technologies Used
@@ -53,7 +63,8 @@ To run the application locally, follow these steps:
 
 ## Vue Libraries Used
 
-- [The Awesome Vue.js 3 Pagination Library](https://github.com/peshanghiwa/vue-awesome-paginate) - Pagination component for Vue.js applications 
+- [The Awesome Vue.js 3 Pagination Library](https://github.com/peshanghiwa/vue-awesome-paginate) - Pagination component for Vue.js applications
 - [Vue 3 Carousel](https://www.npmjs.com/package/vue3-carousel) - Carousel component for Vue.js applications
 - [vue3-lazyload](https://github.com/murongg/vue3-lazyload) - Lazy loading image component for Vue.js applications
 - [vue3-progressbar](https://github.com/aacassandra/vue3-progressbar) - Progress bar component for Vue.js applications
+- [prettier-plugin-tailwindcss](prettier-plugin-tailwindcss) - A Prettier plugin for Tailwind CSS v3.0+ that automatically sorts classes based on their recommended class order

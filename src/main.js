@@ -1,10 +1,10 @@
 import { createApp } from 'vue';
 import App from './App.vue';
 import store from './store';
-import './assets/main.css';
 import VueLazyLoad from 'vue3-lazyload'
 import VueProgressBar from "@aacassandra/vue3-progressbar";
 import VueAwesomePaginate from "vue-awesome-paginate";
+import './assets/main.css';
 
 const app = createApp(App);
 app.use(store);
