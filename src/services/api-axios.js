@@ -1,11 +1,10 @@
 import axios from 'axios';
-const API_KEY = '136d55d9c6878da748d19b6aa4870c86';
 import app from '../main';
 
 const instance = axios.create({
-    baseURL: 'https://api.themoviedb.org/3',
+    baseURL: import.meta.env.VITE_APP_API_BASE_URL,
     params: {
-        api_key: API_KEY,
+        api_key: import.meta.env.VITE_APP_API_KEY,
     },
 });
 

@@ -7,7 +7,7 @@ export default createStore({
     popularMovies: [],
     currentPage: 1,
     totalPages: 0,
-    hasResults: true, // New property to track if there are results
+    hasResults: true,
   },
   mutations: {
     SET_MOVIES(state, movies) {
@@ -57,6 +57,6 @@ export default createStore({
     getPopularMovies: (state) => state.popularMovies,
     getTotalPages: (state) => state.totalPages,
     getCurrentPage: (state) => state.currentPage,
-    getHasResults: (state) => state.hasResults, // Getter for hasResults
+    getHasResults: (state) => state.hasResults,
   },
 });

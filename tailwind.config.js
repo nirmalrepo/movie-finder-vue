@@ -6,8 +6,11 @@ module.exports = {
       colors: {
         'dark-gray': '#141414',
         gold: '#C29440',
-        'gold-hover':'#b3883b'
+        'gold-hover': '#b3883b'
       },
+      fill: (theme) => ({
+        gold: theme('colors.gold'),
+      }),
     },
   },
   variants: {

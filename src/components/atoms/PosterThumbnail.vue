@@ -1,19 +1,18 @@
 <template>
-  <img :src="imageUrl" alt="Movie Poster" class="rounded-lg w-full" />
+  <img
+    v-lazy="{ src: imageUrl }"
+    alt="Movie Poster"
+    class="rounded-lg w-full"
+  />
 </template>
 
 <script>
-import { ref, computed } from "vue";
-
+import { computed } from "vue";
+import { getThumbnail } from "../../services/utils";
 export default {
   props: ["posterPath"],
   setup(props) {
-    const imageUrl = computed(() => {
-      if (!props.posterPath) {
-        return "";
-      }
-      return `https://image.tmdb.org/t/p/w200/${props.posterPath}`;
-    });
+    const imageUrl = computed(() => getThumbnail(props.posterPath));
 
     return {
       imageUrl,

@@ -9,19 +9,14 @@
       ></search-input>
     </div>
     <div class="p-4">
-      <search-results :movies="movies" v-if="movies.length > 0" />
-      <div v-if="movies.length > 0" class="flex justify-center mx-auto max-w-md">
-        <Button :disabled="currentPage === 1" @click="previousPage">
-          Previous
-        </Button>
-        <span class="px-4">{{ currentPage }}</span>
-        <Button :disabled="currentPage === totalPages" @click="nextPage">
-          Next
-        </Button>
-      </div>
-      <div v-else class="flex justify-center mx-auto max-w-md">
-        <p class="text-center text-gray-400" v-if="!hasResults">No results found.</p>
-      </div>
+      <search-results
+        :movies="movies"
+        :currentPage="currentPage"
+        :totalPages="totalPages"
+        :hasResults="hasResults"
+        @previousPage="previousPage"
+        @nextPage="nextPage"
+      />
     </div>
     <div class="p-4">
       <popular-movies :popular-movies="popularMovies" />
@@ -35,14 +30,12 @@ import { useStore } from "vuex";
 import SearchInput from "../molecules/SearchInput.vue";
 import SearchResults from "../organisms/SearchResults.vue";
 import PopularMovies from "../organisms/PopularMovies.vue";
-import Button from "../atoms/Button.vue";
 
 export default {
   components: {
     SearchInput,
     SearchResults,
     PopularMovies,
-    Button,
   },
   setup() {
     const searchTerm = ref("");
@@ -52,7 +45,7 @@ export default {
     const popularMovies = computed(() => store.getters.getPopularMovies);
     const currentPage = computed(() => store.getters.getCurrentPage);
     const totalPages = computed(() => store.getters.getTotalPages);
-    const hasResults = computed(() => store.state.hasResults);
+    const hasResults = computed(() => store.getters.getHasResults);
 
     const fetchMovies = ({ searchTerm, page }) => {
       store.dispatch("fetchMovies", { searchTerm, page });
@@ -83,9 +76,9 @@ export default {
     onMounted(() => {
       fetchPopularMovies();
     });
-    
+
     watch(searchTerm, () => {
-        fetchMovies({ searchTerm: searchTerm.value, page: 1 });
+      fetchMovies({ searchTerm: searchTerm.value, page: 1 });
     });
 
     return {

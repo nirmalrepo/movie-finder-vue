@@ -8,7 +8,8 @@ import VueProgressBar from "@aacassandra/vue3-progressbar";
 const options = {
     color: '#C29440',
     failedColor: 'red',
-    
+    thickness: "4px",
+
 };
 
 

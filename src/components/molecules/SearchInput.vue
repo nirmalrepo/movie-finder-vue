@@ -4,13 +4,9 @@
       v-model="searchTerm"
       type="text"
       placeholder="Search movies..."
-      class="p-2 w-2/3 rounded-3xl mr-2 bg-transparent border-2 border-gold"
+      class="px-4 py-2 w-2/3 rounded-3xl mr-2 bg-transparent border-2 border-gold"
     />
-    <Button
-      @click="searchMovies"
-    >
-      Search
-  </Button>
+    <Button @click="searchMovies"> Search </Button>
   </div>
 </template>
   
@@ -38,7 +34,6 @@ export default {
     return {
       searchTerm,
       searchMovies,
-
     };
   },
 };
