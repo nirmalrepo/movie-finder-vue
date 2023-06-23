@@ -2,7 +2,7 @@
   <img
     v-lazy="{ src: imageUrl }"
     alt="Movie Poster"
-    class="rounded-lg w-full"
+    class="rounded-lg w-full hover:scale-105 transition duration-500 cursor-pointer"
   />
 </template>
 
