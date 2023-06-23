@@ -23,7 +23,7 @@ To run the application locally, follow these steps:
    git clone https://github.com/nirmalrepo/movie-finder-vue.git
 2. Navigate to the project directory:
 
-  ``` shell
+  ```shell
   cd movie-finder-vue
 3. Install the dependencies:
 
