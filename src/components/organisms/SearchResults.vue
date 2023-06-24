@@ -31,7 +31,28 @@ import { computed } from "vue";
 import MovieCard from "../molecules/MovieCard.vue";
 
 export default {
-  props: ["movies", "currentPage", "totalPages", "hasResults"],
+  props: {
+    movies: {
+      type: Array,
+      required: true,
+      default: () => [],
+    },
+    currentPage: {
+      type: Number,
+      required: true,
+      default: 1,
+    },
+    totalPages: {
+      type: Number,
+      required: true,
+      default: 0,
+    },
+    hasResults: {
+      type: Boolean,
+      required: true,
+      default: false,
+    },
+  },
   emits: ["gotoPage"],
   components: {
     MovieCard,

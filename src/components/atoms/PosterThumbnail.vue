@@ -10,7 +10,12 @@
 import { computed } from "vue";
 import { getThumbnail } from "../../services/utils";
 export default {
-  props: ["posterPath"],
+  props: {
+    posterPath: {
+      type: String,
+      default: "",
+    },
+  },
   setup(props) {
     const imageUrl = computed(() => getThumbnail(props.posterPath));
 

@@ -15,7 +15,12 @@ import { ref, watch } from "vue";
 import Button from "../atoms/Button.vue";
 
 export default {
-  props: ["searchTerm"],
+  props: {
+    searchTerm: {
+      type: String,
+      default: "",
+    },
+  },
   emits: ["search", "update:searchTerm"],
   components: {
     Button,

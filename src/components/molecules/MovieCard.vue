@@ -14,7 +14,12 @@ import PosterThumbnail from "../atoms/PosterThumbnail.vue";
 import { formatDate } from "@/services/utils";
 
 export default {
-  props: ["movie"],
+  props: {
+    movie: {
+      type: Object,
+      required: true,
+    },
+  },
   components: {
     PosterThumbnail,
   },

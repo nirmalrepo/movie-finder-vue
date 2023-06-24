@@ -25,7 +25,13 @@ import PosterThumbnail from "../atoms/PosterThumbnail.vue";
 import { Carousel, Slide, Navigation } from "vue3-carousel";
 import "vue3-carousel/dist/carousel.css";
 export default {
-  props: ["popularMovies"],
+  props: {
+    popularMovies: {
+      type: Array,
+      required: true,
+      default: () => [],
+    },
+  },
   components: {
     Carousel,
     Slide,
