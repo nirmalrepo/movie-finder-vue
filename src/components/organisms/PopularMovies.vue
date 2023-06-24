@@ -32,7 +32,7 @@ export default {
     Navigation,
     PosterThumbnail,
   },
-  data: () => ({
+  setup: () => ({
     settings: {
       itemsToShow: 1,
       snapAlign: "center",
