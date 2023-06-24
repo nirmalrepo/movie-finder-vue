@@ -59,6 +59,7 @@ To run the application locally, follow these steps:
 - Vuex - State management pattern and library for Vue.js applications
 - Axios - Promise-based HTTP client for making API requests
 - TailwindCSS - Utility-first CSS framework for styling the application
+- MomentJs - A JavaScript date library for formatting dates.
 - TMDB API - Open movie database API for fetching movie data
 
 ## Vue Libraries Used

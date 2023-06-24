@@ -40,6 +40,7 @@ export default {
     const page = computed(() => props.currentPage);
     const gotoPage = (page) => {
       emit("gotoPage", page);
+      window.scrollTo({ top: 0, behavior: "smooth" });
     };
     return {
       gotoPage,

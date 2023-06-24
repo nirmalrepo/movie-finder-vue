@@ -1,7 +1,8 @@
+import moment from "moment";
 import defaultImgUrl from "../assets/default.jpg";
+
 export function formatDate(date) {
-  const options = { month: "long", day: "numeric", year: "numeric" };
-  const formattedDate = new Date(date).toLocaleDateString(undefined, options);
+  const formattedDate = moment(date).format("MMMM DD, YYYY");
   return formattedDate;
 }
 
