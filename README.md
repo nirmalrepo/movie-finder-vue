@@ -11,7 +11,7 @@ Movie Finder Vue is a web application built with Vue.js, Vuex, and TailwindCSS t
 
 ## Demo
 
-A live demo of the Movie Finder Vue application is available [here](https://movie-finder-vue.vercel.app/).
+A live demo of the Movie Finder Vue application is available [here](https://moviesnow.nirmalfernando.dev/).
 
 ## Installation
 
